@@ -2,7 +2,7 @@
 work_path: ../pipeline_work
 
 log_level: DEBUG
-pool_size: 4
+pool_size: 2 ## orginal: 4
 
 scratchpad:
   chembl_version: '36'
@@ -17,6 +17,17 @@ scratchpad:
   gnomad_version: '4.1'
 
 steps:
+  ## Added
+  retry_demo:
+    - name: copy flaky demo
+      source: http://127.0.0.1:8000/flaky.json
+      destination: input/retry_demo/flaky.json
+      retry:
+        max_attempts: 3
+        initial_delay_seconds: 1
+        backoff: exponential
+        max_delay_seconds: 10
+        jitter: false
   #: BIOSAMPLE STEP :###############################################################################
   biosample:
     - name: copy cell ontology

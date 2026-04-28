@@ -18,6 +18,9 @@ dependencies = [
 [tool.uv]
 override-dependencies = ["urllib3>=2.5.0"]
 
+[tool.uv.sources]
+opentargets-otter = { path = "../otter", editable = true }  ## Added this to test my revised Otter Retry
+
 [dependency-groups]
 dev = ["ruff==0.15.1", "deptry==0.24.0", "ty==0.0.17"]
 

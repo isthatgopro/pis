@@ -1032,8 +1032,8 @@ wheels = [
 
 [[package]]
 name = "opentargets-otter"
-version = "26.3.3"
-source = { registry = "https://pypi.org/simple" }
+version = "26.3.5"
+source = { editable = "../otter" }
 dependencies = [
     { name = "filelock" },
     { name = "gcloud-aio-storage" },
@@ -1045,9 +1045,37 @@ dependencies = [
     { name = "requests" },
     { name = "urllib3" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/48/1c/bb0143436764caeb58c0fb020e99566ee69acbcdf97c3f386e1c1146cd56/opentargets_otter-26.3.3.tar.gz", hash = "sha256:d349b5d26325f2e679b74ac5c3641f1d61e9b3c07ca5b8e237523f796aaadd3a", size = 207713, upload-time = "2026-03-03T14:20:51.631Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/5b/4b/171dd942c9b016fae5dcd29b37260c483beee7f582fcfe9247397543a996/opentargets_otter-26.3.3-py3-none-any.whl", hash = "sha256:2ece942a49a5ed78e1664b00e332fcb8f8675c380e6a410fbf3ed2434c756f88", size = 67018, upload-time = "2026-03-03T14:20:50.408Z" },
+
+[package.metadata]
+requires-dist = [
+    { name = "autodoc-pydantic", marker = "extra == 'docs'", specifier = ">=2.2.0" },
+    { name = "coverage", marker = "extra == 'test'", specifier = "==7.13.4" },
+    { name = "esbonio", marker = "extra == 'docs'", specifier = ">=1.0.0" },
+    { name = "filelock", specifier = "==3.24.3" },
+    { name = "freezegun", marker = "extra == 'test'", specifier = "==1.5.5" },
+    { name = "gcloud-aio-storage", specifier = "==9.6.1" },
+    { name = "google-cloud-storage", specifier = "==3.9.0" },
+    { name = "httpx", specifier = "==0.28.1" },
+    { name = "loguru", specifier = "==0.7.3" },
+    { name = "pydantic", specifier = "==2.12.5" },
+    { name = "pytest", marker = "extra == 'test'", specifier = "==9.0.2" },
+    { name = "pytest-asyncio", marker = "extra == 'test'", specifier = "==1.3.0" },
+    { name = "pytest-mock", marker = "extra == 'test'", specifier = "==3.15.1" },
+    { name = "pyyaml", specifier = "==6.0.3" },
+    { name = "requests", specifier = ">=2.32.5" },
+    { name = "sphinx", marker = "extra == 'docs'", specifier = ">=8.2.3" },
+    { name = "sphinx-autobuild", marker = "extra == 'docs'", specifier = ">=2025.8.25" },
+    { name = "sphinx-issues", marker = "extra == 'docs'", specifier = ">=5.0.1" },
+    { name = "sphinx-rtd-theme", marker = "extra == 'docs'", specifier = ">=3.0.2" },
+    { name = "urllib3", specifier = "==2.6.3" },
+]
+provides-extras = ["test", "docs"]
+
+[package.metadata.requires-dev]
+dev = [
+    { name = "deptry", specifier = "==0.24.0" },
+    { name = "ruff", specifier = "==0.15.1" },
+    { name = "ty", specifier = "==0.0.17" },
 ]
 
 [[package]]
@@ -1106,7 +1134,7 @@ requires-dist = [
     { name = "freezegun", marker = "extra == 'test'", specifier = "==1.5.5" },
     { name = "jq", specifier = "==1.11.0" },
     { name = "loguru", specifier = "==0.7.3" },
-    { name = "opentargets-otter", specifier = "==26.3.3" },
+    { name = "opentargets-otter", editable = "../otter" },
     { name = "pytest", marker = "extra == 'test'", specifier = "==9.0.2" },
     { name = "pytest-asyncio", marker = "extra == 'test'", specifier = "==1.3.0" },
     { name = "pytest-mock", marker = "extra == 'test'", specifier = "==3.15.1" },
