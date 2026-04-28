@@ -5,11 +5,11 @@
 Otter is a YAML-driven task execution framework used in the Open Targets data pipeline. It already supports YAML-defined steps, parallel task execution, logging, and a manifest for tracking execution and provenance. In the original behavior, if a task fails, Otter stops the pipeline and records the failure in the manifest. This prototype changes that behavior for retryable failures by retrying the failing phase before the task is marked as failed. 
 
 
-Thought of design -- [DESIGN.md](../DESIGN.md).
+Thought of design -- [../DESIGN.md](https://github.com/isthatgopro/otter-retry/blob/main/DESIGN.md).
 
 ## Setup
 
-- Start from the [PIS]() repo:
+- Start from the [PIS](https://github.com/isthatgopro/pis/) repo:
 
     ```bash
     uv sync
@@ -19,7 +19,7 @@ Thought of design -- [DESIGN.md](../DESIGN.md).
 
 
 
-    **Keep [Otter]() and [PIS]() under the same parent directory so [PIS]() can use the revised local [Otter]() package.**
+    **Keep [Otter](https://github.com/isthatgopro/otter/) and [PIS](https://github.com/isthatgopro/pis/) under the same parent directory so [PIS](https://github.com/isthatgopro/pis/) can use the revised local [Otter](https://github.com/isthatgopro/otter/) package.**
 
 - Run the local flaky server in one terminal:
 
@@ -202,7 +202,7 @@ uv run pis -s retry_demo
 
 
 ### Manifest 
-(Example: check the [manifest.json](../pipeline_work/manifest.json`))
+(Example: check the [manifest.json](https://github.com/isthatgopro/otter-retry/blob/main/pipeline_work/manifest.json))
 
 - The manifest also records the retry history for the task. In `pis_retry_demo.tasks[0].attempts`, the task shows:
 
