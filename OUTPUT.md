@@ -5,7 +5,7 @@
 Otter is a YAML-driven task execution framework used in the Open Targets data pipeline. It already supports YAML-defined steps, parallel task execution, logging, and a manifest for tracking execution and provenance. In the original behavior, if a task fails, Otter stops the pipeline and records the failure in the manifest. This prototype changes that behavior for retryable failures by retrying the failing phase before the task is marked as failed. 
 
 
-Thought of design -- [../DESIGN.md](https://github.com/isthatgopro/otter-retry/blob/main/DESIGN.md).
+Thought of design -- [DESIGN.md](https://github.com/isthatgopro/otter-retry/blob/main/DESIGN.md).
 
 ## Setup
 
